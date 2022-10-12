@@ -110,7 +110,7 @@ public class Complex {
     }
     public Complex divide(Complex b) {
         Complex a = this;
-        double real = a.re * b.re - a.im * b.im;
+        double real = a.re * b.re + a.im * b.im;
         double imag = a.im * b.re - a.re * b.im;
         re = real / b.lengthSQ();
         im = imag / b.lengthSQ();
