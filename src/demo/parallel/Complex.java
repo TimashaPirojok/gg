@@ -70,7 +70,16 @@ public class Complex {
         im += b.im;
         return this;
     }
-
+    /**
+     * Subtract operation
+     * @param b subtrahend
+     * @return difference of the minuend and subtrahend
+     */
+    public Complex minus(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
     /**
      * Multiply operation.
      * @param  b multiplier
@@ -92,5 +101,13 @@ public class Complex {
     */
     public double lengthSQ() {
         return re * re + im * im;
+    }
+    public Complex divide(Complex b) {
+        Complex a = this;
+        double real = a.re * b.re - a.im * b.im;
+        double imag = a.im * b.re - a.re * b.im;
+        re = real / b.lengthSQ();
+        im = imag / b.lengthSQ();
+        return this;
     }
 }
